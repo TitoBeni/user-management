@@ -1,0 +1,20 @@
+<!-- nou-usuari.component.html -->
+<div class="container">
+  <h2>Afegir Nou Usuari</h2>
+
+  <form (ngSubmit)="afegirUsuari()">
+    <label for="nom">Nom *</label>
+    <input id="nom" [(ngModel)]="nouUsuari.nom" name="nom" required />
+
+    <label for="cognoms">Cognoms</label>
+    <input id="cognoms" [(ngModel)]="nouUsuari.cognoms" name="cognoms" required />
+
+    <label for="email">Email *</label>
+    <input id="email" [(ngModel)]="nouUsuari.email" name="email" required />
+
+    <label for="dni">DNI *</label>
+    <input id="dni" [(ngModel)]="nouUsuari.dni" name="dni" required />
+
+    <button type="submit">Afegir Usuari</button>
+  </form>
+</div>

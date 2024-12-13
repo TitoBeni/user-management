@@ -1,0 +1,52 @@
+<div class="container">
+  <h2>Llistat d'Usuaris</h2>
+
+  <!-- Camp d'entrada per al buscador -->
+  <div class="search-container">
+    <label for="buscador" class="search-label">Cerca usuaris:</label>
+    <input
+      type="text"
+      id="buscador"
+      [(ngModel)]="filtreText"
+      placeholder="Escriu per buscar"
+      class="search-input"
+    />
+  </div>
+
+  <!-- Botons d'exportació i càrrega -->
+  <div class="actions-container">
+    <button (click)="exportarExcel()" class="action-button">Exportar a Excel</button>
+    <button (click)="exportarPDF()" class="action-button">Exportar a PDF</button>
+    <label for="pujarJSON" class="upload-label">Carregar usuaris des de JSON:</label>
+    <input type="file" id="pujarJSON" (change)="carregarUsuarisDelJSON($event)" accept=".json" class="upload-input" />
+  </div>
+
+  <!-- Taula d'usuaris -->
+  <table class="usuaris-table">
+    <thead>
+      <tr>
+        <th (click)="ordenar('nom')">Nom</th>
+        <th (click)="ordenar('cognoms')">Cognoms</th>
+        <th (click)="ordenar('email')">Email</th>
+        <th (click)="ordenar('dni')">DNI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuari of usuarisFiltratsPaginats()" [routerLink]="['/perfil', usuari.dni]" class="user-row">
+        <td>{{ usuari.nom }}</td>
+        <td>{{ usuari.cognoms }}</td>
+        <td>{{ usuari.email }}</td>
+        <td>{{ usuari.dni }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" class="pagination-container">
+          <button (click)="canviarPagina(paginaActual - 1)" [disabled]="paginaActual === 1" class="pagination-button">Anterior</button>
+          <span class="pagination-info">Pàgina {{ paginaActual }}</span>
+          <button (click)="canviarPagina(paginaActual + 1)" [disabled]="paginaActual * elementsPerPagina >= usuarisFiltrats().length" class="pagination-button">Següent</button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

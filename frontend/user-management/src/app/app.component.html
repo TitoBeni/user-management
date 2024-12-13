@@ -1,0 +1,14 @@
+<!-- app.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Aplicació Usuaris</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/usuaris']">Usuaris</ion-button>
+      <ion-button [routerLink]="['/nou-usuari']">Registrarse</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <router-outlet></router-outlet> <!-- Aquest és el lloc on es carreguen les vistes -->
+</ion-content>

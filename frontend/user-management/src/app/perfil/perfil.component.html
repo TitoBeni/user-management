@@ -1,0 +1,12 @@
+<!-- perfil-usuari.component.html -->
+<div *ngIf="usuari" class="container">
+  <h2>Perfil de l'Usuari</h2>
+  <p><strong>Nom:</strong> {{ usuari.nom }}</p>
+  <p><strong>Cognoms:</strong> {{ usuari.cognoms }}</p>
+  <p><strong>Email:</strong> {{ usuari.email }}</p>
+  <p><strong>DNI:</strong> {{ usuari.dni }}</p>
+</div>
+
+<div *ngIf="!usuari" class="container">
+  <p>No s'ha trobat l'usuari.</p>
+</div>

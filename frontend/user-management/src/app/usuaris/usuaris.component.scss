@@ -1,0 +1,130 @@
+/* Estil de contenidor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: #00000000; /* Fons més suau */
+  border-radius: 5px; /* Cantons rodons per al contenidor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra suau */
+}
+
+/* Estil per a l'encapçalament */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff; /* Canviat a un color més fosc */
+}
+
+/* Estil per al cercador i la secció d'accions */
+.search-container,
+.actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-label,
+.upload-label {
+  font-size: 1rem;
+  color: #ffffff; /* Canviat a un color més fosc */
+}
+
+/* Estil per als inputs de cerca i càrrega */
+.search-input,
+.upload-input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Cantons rodons per als inputs */
+  width: 45%;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus,
+.upload-input:focus {
+  border-color: #007BFF; /* Color de focus més viu */
+}
+
+/* Estil per als botons d'acció */
+.action-button {
+  padding: 12px 25px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 25px; /* Cantons rodons per als botons */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+/* Estil per a la taula d'usuaris */
+.usuaris-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombra suau per a la taula */
+  border-radius: 10px; /* Cantons rodons per a la taula */
+}
+
+.usuaris-table th,
+.usuaris-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.usuaris-table th {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.usuaris-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.usuaris-table td {
+  color: #333;
+}
+
+/* Paginació */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-button {
+  padding: 12px 25px;
+  margin: 0 10px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 25px; /* Cantons rodons per als botons de paginació */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-button:hover {
+  background-color: #0056b3;
+}
+
+.pagination-info {
+  font-size: 1rem;
+  margin: 0 10px;
+  color: #333;
+}
