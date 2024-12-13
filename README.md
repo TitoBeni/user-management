@@ -1,6 +1,6 @@
 # user-management
 
-Descripció breu de l'aplicació i la seva funcionalitat.
+Aquesta aplicació és una solució completa per gestionar usuaris, creada amb Ionic i Angular per al frontend, Node.js i Express per a l'API, i MySQL per a la base de dades.
 
 ## Requisits
 
