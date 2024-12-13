@@ -15,39 +15,39 @@ Per executar aquest projecte localment, assegura't que tens instal·lades les se
 
 - A MySQL dins la propia instancia, crear la base de dades:
 
-  CREATE DATABASE usuarisDB;
-  USE usuarisDB;
+  `CREATE DATABASE usuarisDB;
+  USE usuarisDB;`
 
-  CREATE TABLE usuaris (
+  `CREATE TABLE usuaris (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100),
     cognoms VARCHAR(100),
     email VARCHAR(100),
     dni VARCHAR(20)
-  );
+  );`
 
 - Dins la carpeta de la API, canviar credencials al fitxer index.js:
 
-  module.exports = {
+  `module.exports = {
     host: 'localhost',
     user: 'root', // El teu usuari MySQL
     password: '',  // La teva contrasenya
     database: 'usuarisDB',  // El nom de la base de dades
-  };
+  };`
 
 ## Inicia la API (Node.js + Express)
 
 - Accedeix a la carpeta del backend/api (on tens la API):
 
-cd ruta/a/la/carpeta/api
+`cd ruta/a/la/carpeta/api`
 
 - Instal·la les dependències: Si és la primera vegada que treballes amb aquest projecte o si has afegit noves dependències, executa:
 
-npm install
+`npm install`
 
 - Inicia el servidor de l'API:
 
-node index.js
+`node index.js`
 
 - El servidor API s'iniciarà normalment a http://localhost:3000, però si has canviat el port a la configuració, assegura't de mirar el missatge de la terminal per saber en quin port s'executa.
 
@@ -55,15 +55,15 @@ node index.js
 
 - Accedeix a la carpeta del frontend/user-management (on tens el projecte de Ionic + Angular):
 
-cd /camí/del/projecte/frontend
+`cd /camí/del/projecte/frontend`
 
 - Instal·la les dependències (si no ho has fet prèviament):
 
-npm install
+`npm install`
 
 - Inicia l'aplicació frontend:
 
-ionic serve
+`ionic serve`
 
 - Això iniciarà un servidor de desenvolupament que normalment podràs accedir a través de http://localhost:8100.
 
