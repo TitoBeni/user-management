@@ -12,11 +12,11 @@ import 'jspdf-autotable'; // Per crear taules al PDF
 })
 export class UsuarisComponent implements OnInit {
   usuaris: any[] = [];
-  filtreText: string = ''; // Text pel buscador
-  ordre: string = ''; // Propietat per definir per quina columna ordenar
-  ordreAscendent: boolean = true; // Direcció de l'ordre
-  paginaActual: number = 1; // Pàgina actual
-  elementsPerPagina: number = 5; // Nombre d'elements per pàgina
+  filtreText: string = '';
+  ordre: string = '';
+  ordreAscendent: boolean = true;
+  paginaActual: number = 1;
+  elementsPerPagina: number = 5;
 
   constructor(private usuarisService: UsuarisService, private httpClient: HttpClient) {}
 
@@ -38,20 +38,19 @@ export class UsuarisComponent implements OnInit {
 
   // Funció per carregar usuaris del JSON i enviar-los a l'API
   carregarUsuarisDelJSON(event: any): void {
-    const fitxer = event.target.files[0]; // Obtenir el fitxer seleccionat
+    const fitxer = event.target.files[0];
     if (fitxer) {
       const lector = new FileReader();
       lector.onload = (e: any) => {
         try {
-          const dadesJSON = JSON.parse(e.target.result); // El JSON es tipa com 'any'
+          const dadesJSON = JSON.parse(e.target.result);
           this.usuaris = dadesJSON.map((usuari: any) => ({
-            nom: usuari.name,        // 'name' de JSON a 'nom' en català
-            cognoms: usuari.surname, // 'surname' de JSON a 'cognoms' en català
-            email: usuari.email,     // 'email' ja és igual
-            dni: usuari.id           // 'id' de JSON a 'dni' en català
+            nom: usuari.name,        
+            cognoms: usuari.surname, 
+            email: usuari.email,     
+            dni: usuari.id           
           }));
           
-          // Ara, enviarem els usuaris a l'API
           this.afegirUsuarisAPIDatabase(this.usuaris);
 
         } catch (error) {
@@ -64,11 +63,11 @@ export class UsuarisComponent implements OnInit {
 
   // Funció per enviar els usuaris a l'API
   afegirUsuarisAPIDatabase(usuaris: any[]): void {
-    const apiEndpoint = 'http://localhost:3000/api/usuaris'; // URL de l'API
+    const apiEndpoint = 'http://localhost:3000/api/usuaris';
     this.httpClient.post(apiEndpoint, usuaris).subscribe(
       (response) => {
         console.log('Usuaris afegits correctament', response);
-        this.carregarUsuaris();  // Recàrrega la llista d'usuaris després d'afegir els nous
+        this.carregarUsuaris();
       },
       (error) => {
         console.error('Error al enviar els usuaris', error);
@@ -96,10 +95,10 @@ export class UsuarisComponent implements OnInit {
   // Funció per ordenar
   ordenar(propietat: string): void {
     if (this.ordre === propietat) {
-      this.ordreAscendent = !this.ordreAscendent; // Inverteix la direcció si ja està seleccionada
+      this.ordreAscendent = !this.ordreAscendent;
     } else {
-      this.ordre = propietat; // Estableix una nova propietat d'ordre
-      this.ordreAscendent = true; // Reinicia a ascendent
+      this.ordre = propietat;
+      this.ordreAscendent = true;
     }
 
     this.usuaris.sort((a, b) => {
