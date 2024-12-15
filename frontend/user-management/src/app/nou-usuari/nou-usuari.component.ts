@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { UsuarisService } from '../usuaris.service'; // Importa el servei
+import { UsuarisService } from '../usuaris.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nou-usuari',
@@ -14,13 +15,13 @@ export class NouUsuariComponent {
     dni: '',
   };
 
-  constructor(private usuarisService: UsuarisService) {}
+  constructor(private usuarisService: UsuarisService, private router: Router) {}
 
   afegirUsuari() {
-    // Cridem el servei per afegir l'usuari a la base de dades
     this.usuarisService.afegirUsuari(this.nouUsuari).subscribe(
       (response) => {
         console.log('Usuari afegit!', response);
+        this.router.navigate(['/usuaris']);
       },
       (error) => {
         console.error('Error afegint l\'usuari', error);
