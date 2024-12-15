@@ -8,8 +8,8 @@ import { UsuarisService } from '../usuaris.service'; // Importa el servei
   styleUrls: ['./perfil.component.scss'],
 })
 export class PerfilComponent implements OnInit {
-  usuari: any;  // Variable per emmagatzemar l'usuari
-  dni!: string;  // Utilitza l'operador '!' per evitar l'error
+  usuari: any;
+  dni!: string;
 
   constructor(
     private usuarisService: UsuarisService,
@@ -24,8 +24,8 @@ export class PerfilComponent implements OnInit {
     if (this.dni) {
       // Fem una crida al servei per obtenir l'usuari per DNI
       this.usuarisService.getUsuariByDNI(this.dni).subscribe(
-        (usuari) => {  // Aquí 'usuari' serà de tipus any
-          this.usuari = usuari;  // Assignem l'usuari obtingut
+        (usuari) => {
+          this.usuari = usuari;
         },
         (error) => {
           console.error('Error al carregar l\'usuari', error);

@@ -4,9 +4,9 @@
   margin: 0 auto;
   padding: 20px;
   font-family: 'Ubuntu', sans-serif;
-  background-color: #00000000; /* Fons més suau */
-  border-radius: 5px; /* Cantons rodons per al contenidor */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra suau */
+  background-color: #00000000;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Estil per a l'encapçalament */
@@ -14,7 +14,7 @@ h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #ffffff; /* Canviat a un color més fosc */
+  color: #ffffff;
 }
 
 /* Estil per al cercador i la secció d'accions */
@@ -29,7 +29,7 @@ h2 {
 .search-label,
 .upload-label {
   font-size: 1rem;
-  color: #ffffff; /* Canviat a un color més fosc */
+  color: #ffffff;
 }
 
 /* Estil per als inputs de cerca i càrrega */
@@ -38,7 +38,7 @@ h2 {
   padding: 12px;
   font-size: 1rem;
   border: 1px solid #ddd;
-  border-radius: 25px; /* Cantons rodons per als inputs */
+  border-radius: 25px;
   width: 45%;
   outline: none;
   transition: border-color 0.3s;
@@ -46,7 +46,7 @@ h2 {
 
 .search-input:focus,
 .upload-input:focus {
-  border-color: #007BFF; /* Color de focus més viu */
+  border-color: #007BFF;
 }
 
 /* Estil per als botons d'acció */
@@ -55,7 +55,7 @@ h2 {
   background-color: #007BFF;
   color: white;
   border: none;
-  border-radius: 25px; /* Cantons rodons per als botons */
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -70,8 +70,8 @@ h2 {
   border-collapse: collapse;
   margin: 20px 0;
   background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombra suau per a la taula */
-  border-radius: 10px; /* Cantons rodons per a la taula */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .usuaris-table th,
@@ -109,7 +109,7 @@ h2 {
   background-color: #007BFF;
   color: white;
   border: none;
-  border-radius: 25px; /* Cantons rodons per als botons de paginació */
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s;
 }

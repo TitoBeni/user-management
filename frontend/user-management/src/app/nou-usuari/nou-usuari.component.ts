@@ -21,7 +21,6 @@ export class NouUsuariComponent {
     this.usuarisService.afegirUsuari(this.nouUsuari).subscribe(
       (response) => {
         console.log('Usuari afegit!', response);
-        // Aquí podries fer alguna acció després d'afegir l'usuari, com redirigir o netejar el formulari
       },
       (error) => {
         console.error('Error afegint l\'usuari', error);
